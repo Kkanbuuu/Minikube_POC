@@ -15,5 +15,6 @@ spec:
       containers:
       - name: fastapi-app  # 컨테이너 이름
         image: fastapi-app:latest  # 사용할 Docker 이미지 (로컬에서 빌드한 fastapi-app:latest 사용)
+        imagePullPolicy: IfNotPresent # 외부에서 pull 하지 않도록 (Docker registry 에서 찾는것을 방지)
         ports:
         - containerPort: 8000  # 컨테이너 내부에서 노출할 포트 (FastAPI 기본 포트)
